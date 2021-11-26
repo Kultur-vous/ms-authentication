@@ -7,14 +7,13 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon app.ts",
-    "build": "netlify-lambda build src"
+    "build": "yarn add tsc && tsc build app.ts --outDir ./dist"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongodb": "^4.2.0",
     "mongoose": "^6.0.13",
-    "netlify-lambda": "^2.0.15",
     "nodemon": "^2.0.15"
   },
   "devDependencies": {
