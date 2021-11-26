@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon app.ts",
-    "build": "yarn add tsc && tsc build app.ts --outDir ./dist"
+    "build": "npm install typescript && npx tsc build app.ts --outDir ./dist"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
