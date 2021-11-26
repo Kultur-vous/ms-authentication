@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon app.ts",
-    "build": "tsc build app.ts --outDir ./dist"
+    "build": "tsc ./app.ts --outDir ./dist"
   },
   "dependencies": {
     "dotenv": "^10.0.0",

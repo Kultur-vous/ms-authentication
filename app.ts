@@ -1,6 +1,7 @@
-import express from "express";
+//import * as express from "express";
+const express = require('express')
 import mongoConnection from "./db/clientMongo";
-const app = express();
+const app = express;
 const _mongoConnection = mongoConnection;
 import { UserService } from "./service/user";
 
