@@ -6,7 +6,8 @@
   "author": "marth154 <37938187+marth154@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon app.ts"
+    "start": "nodemon app.ts",
+    "build": "tsc build app.ts --outDir ./dist"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
