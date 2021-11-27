@@ -15,7 +15,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //TODO
 
 /* Port en production */
-
+app.get('/', (res: any, req: any) => {
+  res.send("Page d'accueil")
+})
 
 app.get("/users", async (req: Request, res: any) => {
   res.setHeader("Content-Type", "application/json");
