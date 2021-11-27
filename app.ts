@@ -15,8 +15,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //TODO
 
 /* Port en production */
-app.get('/', (res: any, req: any) => {
-  res.send("Page d'accueil")
+app.get('/', (req: any, res: any) => {
+  res.setHeader("Content-Type", "application/json");
+  res.status(200).send({mesage:"Page d'accueil"})
 })
 
 app.get("/users", async (req: Request, res: any) => {
@@ -43,6 +44,6 @@ app.post("/sign-in", async (req: any, res: any) => {
   }
 })
 
-app.listen(process.env.PORT, () => {
-  console.log("Server app listening on port " + process.env.PORT);
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server app listening on port " + process.env.PORT || 3000);
 });
