@@ -6,8 +6,7 @@
   "author": "marth154 <37938187+marth154@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon app.ts",
-    "build": "npm install typescript && npx tsc build app.ts --outDir ./dist"
+    "start": "nodemon app.ts"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
