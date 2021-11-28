@@ -1,6 +1,6 @@
 import User from "../interface/user";
-import bcrypt from "bcrypt"
-import jwt from "jsonwebtoken"
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 const UserModel = require("../models/user");
 
@@ -12,30 +12,22 @@ export class UserDAO {
   async signUp(user: any) {
     const { firstName, lastName, email, password } = user;
     const findUser = await UserModel.findOne({ email });
-    
+
     if (!findUser) {
-      const hashPass = await bcrypt.hash(String(password), 10)
-      
+      const hashPass = await bcrypt.hash(String(password), 10);
+
       const _user = await UserModel.create({
         firstName: firstName,
         lastName: lastName,
         email: email,
-        password: hashPass
-      }, function (err: any) {
-        if (err) return err;
+        password: hashPass,
       });
 
-      // TODO CREER UN TOKEN
-      const token = jwt.sign(
-        { user_id: _user._id, email },
-        "",
-        {
-          expiresIn: "2h",
-        }
-      );  
-      console.log(token)
+      const token = jwt.sign({ user_id: _user._id, email, hashPass }, "shhhhh");
 
-      return user;
+      //const verify = jwt.verify(token, "shhhhh");
+
+      return {id: _user.id, firstName, token};
     } else {
       return { error: "Cette utilisateur existe déjà" };
     }

@@ -45,5 +45,5 @@ app.post("/sign-in", async (req: any, res: any) => {
 })
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log("Server app listening on port " + process.env.PORT || 3000);
+  console.log("Server app listening on port 3000");
 });
