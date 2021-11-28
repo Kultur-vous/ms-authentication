@@ -3,4 +3,5 @@ export default interface User {
     lastName: String
     email: String
     password: String
+    token: String
 }

@@ -7,7 +7,8 @@ var UserSchema = new Schema({
   firstName: String,
   lastName: String,
   email: String,
-  password: String
+  password: String,
+  token: String
 });
 
 // Compile model from schema
