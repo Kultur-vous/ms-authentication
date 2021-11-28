@@ -2,6 +2,7 @@ const express = require("express")
 import { UserService } from "./service/user";
 import mongoConnection from "./db/clientMongo";
 import User from "./interface/user"
+import jwt from "jsonwebtoken";
 
 const app = express();
 const _mongoConnection = mongoConnection;
