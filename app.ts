@@ -30,7 +30,11 @@ app.get("/users", async (req: Request, res: any) => {
 app.post("/sign-up", async (req: Request, res: any) => {
   try {
     const signup = await usersService.signUp(req.body);
-    res.status(200).send(signup)
+    if(signup.error) {
+      res.status(400).send(signup)
+    } else {
+      res.status(200).send(signup)
+    }
   } catch (e) {
     res.status(400).send(e)
   }
@@ -39,7 +43,11 @@ app.post("/sign-up", async (req: Request, res: any) => {
 app.post("/sign-in", async (req: any, res: any) => {
   try  {
     const signin = await usersService.signIn(req.body.password, req.body.email)
-    res.status(200).send(signin)
+    if(signin.error) {
+      res.status(400).send(signin)
+    } else {
+      res.status(200).send(signin)
+    }
   } catch (e) {
     res.status(400).send(e)
   }
