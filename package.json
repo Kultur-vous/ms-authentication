@@ -6,7 +6,8 @@
   "author": "marth154 <37938187+marth154@users.noreply.github.com>",
   "license": "MIT",
   "engines": {
-    "node": "14.x"
+    "node": "14.x",
+    "npm": "6.x"
   },
   "scripts": {
     "start": "node dist/app.js",

@@ -1,6 +1,6 @@
 import User from "../interface/user";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import * as bcrypt from "bcrypt";
+import * as jwt from "jsonwebtoken";
 
 const UserModel = require("../models/user");
 
