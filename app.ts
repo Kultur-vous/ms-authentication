@@ -1,12 +1,14 @@
 const express = require("express");
 import { UserService } from "./service/user";
 import mongoConnection from "./db/clientMongo";
+const cors = require("cors");
 
 const app = express();
 const _mongoConnection = mongoConnection;
 const usersService = new UserService();
 require("dotenv").config();
 
+app.use(cors());
 app.use(express.json());
 
 app.use(function (
