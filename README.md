@@ -2,23 +2,34 @@
 
 DANVERS Martin & GAUTRON Marie
 
+## Url deployed
+
+https://boo-user.herokuapp.com/
+
 ## Install dependencies
 
 `yarn`
 
 ## You might need
 
+Node 14+ : `nvm use 14`
+
 Error : `[nodemon] failed to start process, "ts-node" exec not found`
 
 Solution : Install ts-node `npm install -g ts-node`
 
-## Run
+## Run local
 
-`yarn start`
+`yarn dev`
 
-## Build
+Add `.env` :
 
-"build": "npm install typescript && npx tsc build app.ts --outDir ./dist"
+```
+PORT=3000
+MONGO_USERNAME=admin
+MONGO_PASS=CfQ8q6N59w6FHCt
+MONGO_DB=users
+```
 
 ## Endpoints
 
