@@ -23,28 +23,36 @@ export class UserDAO {
         password: hashPass,
       });
 
-      const token = jwt.sign({ user_id: _user._id, email, hashPass }, "shhhhh", {expiresIn: "2h"});
+      const token = jwt.sign(
+        { user_id: _user._id, email, hashPass },
+        "shhhhh",
+        { expiresIn: "2h" }
+      );
 
-      return {id: _user.id, firstName, token};
+      return { id: _user.id, firstName, token };
     } else {
       return { error: "Cette utilisateur existe déjà" };
     }
   }
 
   async signIn(password: String, email: String) {
-    const user = await UserModel.findOne({ email: email});
+    console.log(password);
+    const user = await UserModel.findOne({ email: email });
     if (user) {
-
-      const verifyHash = await bcrypt.compare(String(password), user.password)
-      const hashPass = user.password
-      if(verifyHash) {
-        const token = jwt.sign({ user_id: user._id, email, hashPass }, "shhhhh", {expiresIn: "2h"});
-        return {id: user._id, email, token};
+      const verifyHash = await bcrypt.compare(String(password), user.password);
+      const hashPass = user.password;
+      if (verifyHash) {
+        const token = jwt.sign(
+          { user_id: user._id, email, hashPass },
+          "shhhhh",
+          { expiresIn: "2h" }
+        );
+        return { id: user._id, email, token };
       } else {
-        return { error: "Le mot de passe n'est pas bon"}
+        return { error: "Le mot de passe n'est pas bon" };
       }
     } else {
-      return { error: "Cette utilisateur n'existe pas " };
+      throw new Error("Cet utilisateur nexiste pas");
     }
   }
 }
