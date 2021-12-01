@@ -24,11 +24,11 @@ Solution : Install ts-node `npm install -g ts-node`
 
 ### Get all users
 
-`/users`
+`GET /users`
 
 ### Sign up
 
-`/sign-up`
+`POST /sign-up`
 
 Body :
 
@@ -43,7 +43,11 @@ Body :
 
 ### Sign in
 
+<<<<<<< HEAD
 `/sign-in`
+=======
+`POST /sign-in`
+>>>>>>> 685eff584cb5ecc7ae2e1f41ff66658af1767883
 
 Body :
 

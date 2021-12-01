@@ -49,7 +49,8 @@ app.post("/sign-up", async (req: Request, res: any) => {
     const signup = await usersService.signUp(req.body);
     res.status(200).send(signup);
   } catch (e) {
-    res.status(400).send(e);
+    console.log(e);
+    res.status(400).send("Tu as déjà un compte. Connecte toi !");
   }
 });
 

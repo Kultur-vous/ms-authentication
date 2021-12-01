@@ -31,7 +31,7 @@ export class UserDAO {
 
       return { id: _user.id, firstName, token };
     } else {
-      return { error: "Cette utilisateur existe déjà" };
+      throw new Error("Cet utilisateur existe déjà");
     }
   }
 
@@ -49,7 +49,7 @@ export class UserDAO {
         );
         return { id: user._id, email, token };
       } else {
-        return { error: "Le mot de passe n'est pas bon" };
+        throw new Error("Ce mot de passe n'est pas le bon");
       }
     } else {
       throw new Error("Cet utilisateur nexiste pas");
