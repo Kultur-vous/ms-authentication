@@ -13,7 +13,7 @@
     "dev": "nodemon app.ts",
     "start": "node app.js",
     "build": "tsc",
-    "postinstall": "npm install -g ts-node && npm install typescript && npm run build",
+    "postinstall": "npm install -g ts-node && yarn && npm run build",
     "deploy": "git add . && git commit -m Heroku && git push"
   },
   "dependencies": {
