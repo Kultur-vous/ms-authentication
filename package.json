@@ -10,11 +10,7 @@
     "npm": "6.x"
   },
   "scripts": {
-    "dev": "nodemon app.ts",
-    "start": "node app.js",
-    "build": "tsc",
-    "postinstall": "npm install -g ts-node && npm i --save-dev @types/bcrypt @types/jsonwebtoken && npm run build",
-    "deploy": "git add . && git commit -m Heroku && git push"
+    "dev": "nodemon app.ts"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
