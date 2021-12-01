@@ -11,12 +11,9 @@
   },
   "scripts": {
     "dev": "nodemon app.ts",
-    "build-ts": "tsc",
-    "postinstall": "npm run build-ts",
-    "start": "npm run serve",
-    "serve": "node dist/app.js",
-    "watch-node": "nodemon dist/app.js",
-    "watch-ts": "tsc -w",
+    "start": "node build/app.js",
+    "build": "tsc",
+    "postinstall": "npm run build",
     "deploy": "git add . && git commit -m Heroku && git push"
   },
   "dependencies": {
