@@ -5,6 +5,9 @@
   "repository": "https://github.com/Kultur-vous/authentication.git",
   "author": "marth154 <37938187+marth154@users.noreply.github.com>",
   "license": "MIT",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node dist/index.js", 
     "postinstall": "tsc", 
