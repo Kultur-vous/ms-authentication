@@ -16,7 +16,10 @@ app.use(function (
   res: { setHeader: (arg0: string, arg1: string | boolean) => void },
   next: () => void
 ) {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://boo-quiz.herokuapp.com"
+  );
 
   res.setHeader(
     "Access-Control-Allow-Methods",
